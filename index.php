@@ -12,7 +12,7 @@
 		<div class="message"><div class="alert alert-warning"><strong>Warning!</strong>Field Must not be empty. <button type="button" class="close" data-dismiss="alert" aria-label="Close">
 	    <span aria-hidden="true">&times;</span>
 	  </button></div></div>
-		<form>
+		<form method="POST" enctype="multipart/form-data">
 		  <div class="form-group">
 		    <label for="exampleInputName1">Full Name</label>
 		    <input name="name" type="email" class="form-control" id="exampleInputName1" aria-describedby="emailHelp">
