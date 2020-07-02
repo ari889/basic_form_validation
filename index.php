@@ -35,6 +35,21 @@
 			$message = '<div class="alert alert-warning"><strong>Warning!</strong>Only gmail and coadertrust mail are accepted. <button type="button" class="close" data-dismiss="alert" aria-label="Close">
 	    <span aria-hidden="true">&times;</span>
 	  </button></div>';
+		}else if(image_validation($image) === false){
+			$message = '<div class="alert alert-warning"><strong>Warning!</strong>Invalid image format. <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	    <span aria-hidden="true">&times;</span>
+	  </button></div>';
+		}else{
+			move_uploaded_file($tmp_image, "uploads/$image");
+			$message = '<div class="jumbotron">
+			  <h1 class="display-4">Hi, '.$name.', your data updated successfully.</h1>
+			  <p class="lead">Name: '.$name.'</p>
+			  <hr class="my-4">
+			  <p>Email: '.$email.'</p>
+			  <p>Cell: '.$cell.'</p>
+			  <p>Age: '.$age.'</p>
+			  <img src="uploads/'.$image.'" alt="" class="img-fluid">
+			</div>';
 		}
 	}
 

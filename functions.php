@@ -20,4 +20,15 @@
 		}
 	}
 
+	function image_validation($image){
+		$image_array = explode('.', $image);
+		$ext = end($image_array);
+
+		if(in_array($ext, ['jpg', 'png', 'gif']) === false){
+			return false;
+		}else{
+			return true;
+		}
+	}
+
  ?>
