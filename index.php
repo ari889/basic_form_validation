@@ -7,6 +7,18 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
+	<?php 
+
+	if(isset($_POST['submit'])){
+		$name = $_POST['name'];
+		$email = $_POST['email'];
+		$cell = $_POST['cell'];
+		$image = $_FILES['image']['name'];
+		$tmp_image = $_FILES['image']['tmp_name'];
+		$age = $_POST['age'];
+	}
+
+	 ?>
 	<div class="custom_signup">
 		<h2 class="text-center">Sign Up</h2>
 		<div class="message"><div class="alert alert-warning"><strong>Warning!</strong>Field Must not be empty. <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -15,7 +27,7 @@
 		<form method="POST" enctype="multipart/form-data">
 		  <div class="form-group">
 		    <label for="exampleInputName1">Full Name</label>
-		    <input name="name" type="email" class="form-control" id="exampleInputName1" aria-describedby="emailHelp">
+		    <input name="name" type="text" class="form-control" id="exampleInputName1" aria-describedby="emailHelp">
 		  </div>
 		  <div class="form-group">
 		    <label for="exampleInputEmail1">Email</label>
