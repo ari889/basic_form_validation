@@ -25,6 +25,10 @@
 			$message = '<div class="alert alert-warning"><strong>Warning!</strong>Invalid Email address. <button type="button" class="close" data-dismiss="alert" aria-label="Close">
 	    <span aria-hidden="true">&times;</span>
 	  </button></div>';
+		}else if($age < 20 OR $age > 30){
+			$message = '<div class="alert alert-warning"><strong>Warning!</strong>Only 20 to 30 years people are accepted for registration. <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	    <span aria-hidden="true">&times;</span>
+	  </button></div>';
 		}
 	}
 
