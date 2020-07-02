@@ -9,6 +9,8 @@
 <body>
 	<?php 
 
+	include_once 'functions.php';
+
 	if(isset($_POST['submit'])){
 		$name = $_POST['name'];
 		$email = $_POST['email'];
@@ -29,6 +31,10 @@
 			$message = '<div class="alert alert-warning"><strong>Warning!</strong>Only 20 to 30 years people are accepted for registration. <button type="button" class="close" data-dismiss="alert" aria-label="Close">
 	    <span aria-hidden="true">&times;</span>
 	  </button></div>';
+		}else if(check_private_email($email) === false){
+			$message = '<div class="alert alert-warning"><strong>Warning!</strong>Only gmail and coadertrust mail are accepted. <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	    <span aria-hidden="true">&times;</span>
+	  </button></div>';
 		}
 	}
 
@@ -39,15 +45,15 @@
 		<form method="POST" enctype="multipart/form-data">
 		  <div class="form-group">
 		    <label for="exampleInputName1">Full Name</label>
-		    <input name="name" type="text" class="form-control" id="exampleInputName1" aria-describedby="emailHelp">
+		    <input name="name" type="text" class="form-control" id="exampleInputName1" aria-describedby="emailHelp" value="<?php old('name'); ?>">
 		  </div>
 		  <div class="form-group">
 		    <label for="exampleInputEmail1">Email</label>
-		    <input name="email" type="text" class="form-control" id="exampleInputEmail1">
+		    <input name="email" type="text" class="form-control" id="exampleInputEmail1" value="<?php old('email'); ?>">
 		  </div>
 		   <div class="form-group">
 		    <label for="cell">Cell</label>
-		    <input name="cell" type="text" class="form-control" id="cell">
+		    <input name="cell" type="text" class="form-control" id="cell" value="<?php old('cell'); ?>">
 		  </div>
 		  <div class="form-group">
 		    <label for="image">Image</label>
@@ -55,7 +61,7 @@
 		  </div>
 		  <div class="form-group">
 		    <label for="age">Age</label>
-		    <input name="age" type="text" class="form-control" id="age">
+		    <input name="age" type="text" class="form-control" id="age" value="<?php old('age'); ?>">
 		  </div>
 		  <button name="submit" type="submit" class="btn btn-primary">Submit</button>
 		</form>
