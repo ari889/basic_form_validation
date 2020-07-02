@@ -21,6 +21,10 @@
 			$message = '<div class="alert alert-warning"><strong>Warning!</strong>Field Must not be empty. <button type="button" class="close" data-dismiss="alert" aria-label="Close">
 	    <span aria-hidden="true">&times;</span>
 	  </button></div>';
+		}else if(filter_var($email, FILTER_VALIDATE_EMAIL) === false){
+			$message = '<div class="alert alert-warning"><strong>Warning!</strong>Invalid Email address. <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	    <span aria-hidden="true">&times;</span>
+	  </button></div>';
 		}
 	}
 
